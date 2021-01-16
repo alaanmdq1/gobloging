@@ -1,5 +1,5 @@
 module github.com/alaanmdq1/gobloging
-
+// +heroku goVersion go1.5
 go 1.15
 
 require (
