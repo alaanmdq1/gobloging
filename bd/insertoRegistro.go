@@ -13,8 +13,8 @@ func InsertoRegistro(u models.Users) (string, bool, error) {
 	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 	defer cancel()
 
-	db := MongoCN.Database("microblog")
-	col := db.Collection("usuarios")
+	db := MongoCN.Database("microblogging")
+	col := db.Collection("users")
 	u.Password, _ = EncriptarPassword(u.Password)
 	result, err := col.InsertOne(ctx, u)
 	if err != nil {
